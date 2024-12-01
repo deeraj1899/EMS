@@ -1,0 +1,65 @@
+.admin-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f6f8; 
+  }
+  
+  .admin-login__box {
+    background-color: #fff; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px; /* Padding inside the box */
+    width: 400px; /* Fixed width for the box */
+    margin-top: 20px; /* Space between header and box */
+  }
+  
+  .admin-login__title {
+    font-size: 24px; /* Title font size */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center align the title */
+  }
+  
+  .admin-login__form {
+    display: flex;
+    flex-direction: column; /* Stack fields vertically */
+  }
+  
+  .admin-login__field {
+    margin-bottom: 20px; /* Space between fields */
+  }
+  
+  .admin-login__field label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+  }
+  
+  .admin-login__field input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded input corners */
+    font-size: 16px; /* Input font size */
+  }
+  
+  .admin-login__field input:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .admin-login__submit {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+  }
+  
+  .admin-login__submit:hover {
+    background-color: #0056b3; 
+  }
+  

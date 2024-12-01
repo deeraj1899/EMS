@@ -1,0 +1,55 @@
+/* PromoteEmployee.css */
+
+/* Main layout for promote employee section */
+.promote-employee-layout {
+    display: flex;
+  }
+  
+  /* Employee list container styles */
+  .employee-list-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Employee box styles */
+  .employee-box {
+    border: 1px solid #ccc; /* Example border */
+    padding: 10px; /* Example padding */
+    margin: 10px 0; /* Example margin */
+    display: flex; /* Flexbox for layout */
+  }
+  
+  /* Profile section styles */
+  .profile {
+    text-align: center; /* Center the profile picture and name */
+  }
+  
+  /* Styles for the details section */
+  .details {
+    padding-left: 20px; /* Space between profile and details */
+  }
+  
+  /* Grid layout for employee details */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between grid items */
+  }
+  
+  /* Add styles for the detail headings */
+  .detail-heading {
+    font-weight: bold; /* Make the heading bold */
+    text-transform: uppercase; /* Capitalize the heading text */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Style for the promote button */
+  .promote-button {
+    background-color: blue; /* Example background color for promote button */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Spacing above the button */
+  }
+  

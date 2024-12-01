@@ -1,0 +1,76 @@
+.createOrg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    max-height: 80vh;
+    padding: 20px;
+    border: 2px solid cadetblue;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    margin: 8%; 
+    background-image: url('https://www.digitalplatforms.co.za/wp-content/uploads/2015/11/Website-Design-Background.jpg');
+      background-size: cover;
+      background-position: center;
+   
+      background-repeat: no-repeat;
+      
+  }
+  .createOrgmain{
+    margin: 50px;
+  }
+  .createOrgmain a{
+    text-decoration: none;
+    /* border: 1px solid red; */
+    cursor: pointer;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+  
+  }
+  .orgForm {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .orgForm input {
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .orgForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .orgForm button:hover {
+    background-color: #218838;
+  }
+  
+  .orgImage {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .orgImage img {
+    width: 60%;
+    height:60%
+  }
+.itag{
+  display:flex;
+  flex-direction: column;
+}
+  

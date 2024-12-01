@@ -1,0 +1,172 @@
+.employee-home-container {
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; 
+  background-image: url('https://www.digitalplatforms.co.za/wp-content/uploads/2015/11/Website-Design-Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1; 
+    }
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .profile-picture {
+    text-align: center;
+  }
+  
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-picture img:hover {
+    transform: scale(1.1); 
+  }
+  
+  .change-photo-button {
+    display: block;
+    margin: 10px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+  }
+  
+  .change-photo-button:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+  }
+  
+  .profile-details {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .profile-details li {
+    margin-bottom: 10px;
+    font-weight: 700;
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
+  }
+  
+  /* Staggered fade-in effect for each list item */
+  .profile-details li:nth-child(1) { animation-delay: 0.1s; }
+  .profile-details li:nth-child(2) { animation-delay: 0.2s; }
+  .profile-details li:nth-child(3) { animation-delay: 0.3s; }
+  
+  /* Details Section */
+  .details-section {
+    width: 60%;
+    flex: 2;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    border: 2px solid rgb(173, 140, 140);
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
+    animation-delay: 0.4s; 
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s ease; /* Color transition */
+  }
+  
+  .header:hover h2 {
+    color: #007bff; /* Change color on header hover */
+  }
+  
+  .headernext {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .headernext p {
+    margin: 0;
+    color: gray;
+    margin: 5px;
+  }
+  
+  /* Tabs */
+  .tabs {
+    margin-top: 20px;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab {
+    margin-right: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Color transition */
+  }
+  
+  .tab:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid red;
+    color: rgb(28, 29, 28);
+  }
+  
+  /* Info Table */
+  .info-table {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .info-table table {
+    width: 100%;
+    border-collapse: collapse;
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
+    animation-delay: 0.6s; 
+  }
+  
+  .info-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .info-table td:first-child {
+    font-weight: bold;
+    color: gray;
+  }
+  

@@ -1,0 +1,84 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e80000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+.title-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-family: "Roboto Slab", serif;
+}
+
+.button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #000000, #050300);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.login-btn:hover,
+.create-btn:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 760px) {
+  .logo-container {
+    display: none; 
+  }
+
+  .btn {
+    display: inline-block; 
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  html, body {
+    min-width: 440px; 
+    overflow-x: hidden;
+  }
+}

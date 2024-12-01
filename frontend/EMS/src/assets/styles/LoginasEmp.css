@@ -1,0 +1,95 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    max-height: 80vh;
+    padding: 20px;
+    border: 2px solid cadetblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin: 8%;
+    background-image: url('https://www.digitalplatforms.co.za/wp-content/uploads/2015/11/Website-Design-Background.jpg');
+    background-size: cover;
+    /* Ensure the background covers the container */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent the background from repeating */
+  }
+  
+  .login-form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Add a white background with slight transparency for readability */
+    padding: 20px;
+    border-radius: 15px;
+    /* Make the form look more modern */
+  }
+  
+  .login-form div {
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .login-form i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 15px;
+    padding-left: 50px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-image img {
+    width: 60%;
+    height: 60%;
+  }
+  
+  .forgot {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .iform {
+    display: flex;
+    flex-direction: column;
+  }

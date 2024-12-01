@@ -1,0 +1,107 @@
+.tabs-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: "Roboto Slab", serif;
+  margin: 20px 0;
+  
+}
+
+.tabs-container h3 {
+  cursor: pointer;
+  margin: 0;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  color: #555;
+}
+
+.active-tab {
+  background-color: #007bff; 
+  color: white; 
+}
+
+.tabs-container h3:hover {
+  background-color: #f0f0f0;
+}
+
+.content-container {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.reviews-container, .updates-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url('https://www.digitalplatforms.co.za/wp-content/uploads/2015/11/Website-Design-Background.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent the background from repeating */
+}
+
+.review-card {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  width: 280px;
+  background-color: #fff; /* Light peach background */
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.review-heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.review-divider {
+  width: 50%;
+  margin: 10px auto;
+  border: none;
+  border-top: 1px solid #007bff;
+}
+
+.review-content {
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+
+.updates-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #555;
+}
+
+@media screen and (max-width: 860px) {
+  .reviews-container .review-card {
+    width: 90%; /* Make cards wider on smaller screens */
+  }
+}

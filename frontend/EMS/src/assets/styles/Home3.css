@@ -1,0 +1,58 @@
+.Home3-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.Home3-main h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+/* Container for the logos */
+.logos-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Ensures logos stay in one line */
+    animation: scrollLogos 15s linear infinite;
+    /* Add scroll animation */
+}
+
+.logos img {
+    width: 200px;
+    margin: 10px;
+}
+
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(100%);
+        /* Start from the right */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Move all logos out of the view */
+    }
+}
+
+/* Hide extra logos on smaller screens */
+@media screen and (max-width: 1086px) {
+    .logos img:nth-child(n+5) {
+        display: none;
+    }
+}

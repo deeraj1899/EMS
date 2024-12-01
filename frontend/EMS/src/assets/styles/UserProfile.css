@@ -1,0 +1,90 @@
+.user-profile {
+  background-image: url('../../assets/videos/video-1.gif');
+  background-size: cover; /* Ensure the background covers the whole viewport */
+  background-position: center; /* Center the background image */
+  font-family: 'Open Sans', sans-serif;
+  height:90vh; /* Set height to 100% of the viewport */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.user-profile-container {
+  max-width: 1000px; /* Set a max width for the profile */
+  width: 100%; /* Allow it to stretch fully within the parent */
+  margin: 20px; /* Add margin around the container */
+  padding: 20px; /* Add some padding */
+  border: 1px solid #ccc; /* Border around the profile */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: rgba(249, 249, 249, 0.128); /* Light background color with transparency */
+  height: auto; /* Allow the container to adjust its height based on content */
+  display: flex; /* Use flexbox for inner content */
+  flex-direction: column; /* Stack children vertically */
+  align-items: stretch; /* Allow children to stretch to full width */
+  z-index: 2;
+  /* color: white; */
+}
+
+  
+  h2 {
+    text-align: center; /* Center the profile title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.8em; /* Larger font size for the title */
+    color: white; /* Dark color for the title */
+  }
+  
+  .info-table {
+    width: 100%; /* Full width for the table */
+  }
+  
+  table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Remove gaps between cells */
+  }
+  
+  th, td {
+    padding: 12px 15px; /* Add padding to table cells */
+    text-align: left; /* Left-align text */
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }
+  
+  td:first-child {
+    font-weight: bold; /* Bold font for labels */
+    color: whitesmoke; /* Slightly darker color for labels */
+  }
+  
+  td:last-child {
+    color: whitesmoke; /* Dark color for data */
+  }
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space below the image */
+  }
+  
+  .profile-image {
+    width: 150px; /* Set desired size */
+    height: 150px;
+    border-radius: 50%; /* Circle shape */
+    object-fit: cover; /* Cover to fill circle area */
+    border: 3px solid #ddd; /* Border around the image */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .profile-image-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666; 
+    font-size: 1.2em; 
+  }
+  

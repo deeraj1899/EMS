@@ -1,0 +1,93 @@
+.delete-employee-layout {
+    display: flex;
+    flex-direction: row; /* Ensure children are in a row */
+    min-height: 100vh; /* Take up full viewport height */
+}
+
+.employee-list-container {
+    flex: 1; /* This allows the employee list container to take the remaining width */
+    padding: 20px;
+    background-color: #ffffff; /* Background color for the employee list */
+    overflow-y: auto; /* Allow scrolling if the content overflows */
+}
+
+.employee-box {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Spacing between employee boxes */
+    padding: 10px;
+    border: 1px solid #ddd; /* Border for employee box */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for each employee box */
+}
+
+.profile {
+    margin-right: 15px; /* Space between profile and details */
+}
+
+.details p {
+    font-family: 'Arial', sans-serif; /* Change to your preferred font */
+    font-size: 16px; /* Adjust font size as needed */
+    margin: 5px 0; /* Spacing between paragraphs */
+}
+
+/* Make side headings bold */
+.details h3 {
+    font-weight: bold; /* Makes the employee name bold */
+}
+
+.delete-button {
+    padding: 10px 15px;
+    background-color: #ff6f61; /* Red background for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff4d4d; /* Darker red on hover */
+}
+
+/* DeleteEmployee.css */
+
+/* Add styles for the detail headings */
+.detail-heading {
+    font-weight: bold; /* Make the heading bold */
+    text-transform: uppercase; /* Capitalize the heading text */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Optional: Style for the employee list container */
+  .employee-list-container {
+    /* Add any additional styles you want for the container */
+  }
+  
+  .employee-box {
+    /* Add styles for each employee box */
+    border: 1px solid #ccc; /* Example border */
+    padding: 10px; /* Example padding */
+    margin: 10px 0; /* Example margin */
+    display: flex; /* Flexbox for layout */
+  }
+  
+  .profile {
+    /* Styles for the profile section */
+    text-align: center; /* Center the profile picture and name */
+  }
+  
+  .details {
+    /* Styles for the details section */
+    padding-left: 20px; /* Space between profile and details */
+  }
+  
+  /* Style for the delete button */
+  .delete-button {
+    background-color: red; /* Example background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Spacing above the button */
+  }
+  

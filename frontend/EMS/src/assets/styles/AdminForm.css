@@ -1,0 +1,132 @@
+.admin-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #faf5f5;
+  
+    padding: 20px;
+    background: linear-gradient(90deg, #050505, #050505);
+  
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .admin-form-content {
+    background-color:#e9ecef;
+   
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(237, 237, 237, 0.2);
+  
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 0.8s ease-out;
+  
+  }
+  
+  /* Title text style */
+  .admin-form-content h1 {
+    font-size: 32px;
+    color: #1f0de7;
+  
+    font-family: "Montserrat", serif;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-form-content h2 {
+    font-size: 24px;
+    color: #080808;
+   
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .admin-form-content label {
+    display: block;
+    font-weight: bold;
+    color: #090df5;
+    /* Light grey */
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .admin-form-content input,
+  .admin-form-content select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 6px;
+    background-color: rgb(234, 234, 234);
+    color: #070707;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .admin-form-content input:focus,
+  .admin-form-content select:focus {
+    border-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+  }
+  
+  .admin-form-content button {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .admin-form-content button:hover {
+    background-color: #01f933;
+    
+    color: #000000;
+    
+    transform: scale(1.05);
+  
+  }
+  
+  .admin-form-content .error {
+    color: #ff4d4d;
+  
+    margin-top: 10px;
+  }
+  
+  .admin-form-content .message {
+    color: #4caf50;
+   
+    margin-top: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

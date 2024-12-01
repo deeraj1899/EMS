@@ -1,0 +1,61 @@
+.Review-Work-container {
+    display: flex;
+    flex-direction: row; /* Sidebar and main content side-by-side */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+.Sidebar {
+    width: 250px;
+    background-color: #2e3b55;
+    padding: 20px;
+    color: white;
+}
+
+.Review-work-layout {
+    flex: 1; 
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.submittedWorkBox {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.submittedWorkBox h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.submittedWorkBox p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.submittedWorkBox .bottomRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.submittedWorkBox .bottomRow a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+}

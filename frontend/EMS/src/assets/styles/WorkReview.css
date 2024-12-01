@@ -1,0 +1,99 @@
+.work-review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .work-review-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .work-review-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .work-review-container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .work-review-container a:hover {
+    background-color: #0056b3;
+  }
+  .comments-section {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .comment-item {
+    margin-bottom: 10px;
+  }
+  
+  .add-comment {
+    margin-top: 20px;
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-comment button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .add-comment button:hover {
+    background-color: #0056b3;
+  }
+  @media (max-width: 600px) {
+    .work-review-container {
+      padding: 15px;
+      margin: 20px;
+    }
+  
+    .work-review-container h2 {
+      font-size: 20px;
+    }
+  
+    .work-review-container p {
+      font-size: 14px;
+    }
+  
+    .work-review-container a {
+      padding: 8px 16px;
+    }
+  }
+  

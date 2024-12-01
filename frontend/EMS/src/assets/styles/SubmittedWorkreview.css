@@ -1,0 +1,59 @@
+.SubmittedWorkreview-container {
+  display: flex;
+  flex-direction: column; /* Sidebar and header on top */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+}
+
+.SubmittedWorkreview-layout {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 20px; /* Space between work items */
+  padding: 20px; /* Overall padding */
+  overflow-y: auto; /* Enable scrolling if necessary */
+}
+
+.submittedWorkCard {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Space out content */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Left align text for a professional look */
+  width: calc(30% - 20px); /* Adjust width for a responsive layout */
+}
+
+.submittedWorkCard h3 {
+  font-size: 18px; /* Heading size */
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.submittedWorkCard p {
+  font-size: 14px; /* Body text size */
+  margin-bottom: 10px; /* Space below paragraph */
+}
+
+.submittedWorkDetails {
+  display: flex;
+  justify-content: space-between; /* Space between details */
+  align-items: center; /* Center align vertically */
+  margin-top: 15px; /* Space above details */
+}
+
+.submittedWorkDetails a {
+  color: #3498db; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Font size for links */
+}
+
+.message-icon {
+  width: 20px; /* Icon size */
+  height: 20px; /* Icon size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
