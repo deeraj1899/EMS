@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import register from '../assets/Images/register.png';
 import toast from "react-hot-toast";
 import { AUTH_API_ENDPOINT } from '../utils/constant';
@@ -8,43 +8,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const CreateOrganizationForm = () => {
     const navigate = useNavigate();
-    const [searchParams] = useSearchParams();
     const fileInputRef = useRef(null);
-
-    useEffect(() => {
-        const initializeForm = async () => {
-            const payment = searchParams.get('payment');
-            const sessionId = searchParams.get('sessionId');
-
-            if (payment === 'success' && sessionId) {
-                try {
-                    const response = await fetch(`${AUTH_API_ENDPOINT}/stripe/session?sessionId=${sessionId}`);
-                    const data = await response.json();
-                    
-                    if (response.ok) {
-                        setOrganizationState(prev => ({
-                            ...prev,
-                            mail: data.email,
-                            price: data.price,
-                            duration: data.duration
-                        }));
-                    } else {
-                        toast.error('Failed to retrieve session details');
-                        navigate('/PricingPlan');
-                    }
-                } catch (error) {
-                    console.error('Error fetching session details:', error);
-                    toast.error('Error retrieving payment details');
-                    navigate('/PricingPlan');
-                }
-            } else if (payment === 'cancel') {
-                toast.error('Payment was cancelled');
-                navigate('/PricingPlan');
-            }
-        };
-
-        initializeForm();
-    }, [navigate, searchParams]);
 
     const [organization, setOrganizationState] = useState({
         organization_name: "",
