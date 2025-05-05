@@ -1,4 +1,5 @@
 import swaggerJSDoc from 'swagger-jsdoc';
+const frontendUrl = process.env.FRONTEND_URL;
 
 const options = {
   definition: {
@@ -9,7 +10,7 @@ const options = {
       description: 'REST endpoints for your EMS backend',
     },
     servers: [
-      { url: 'http://localhost:8080', description: 'Local dev server' }
+      { url: frontendUrl, description: 'Local dev server' }
     ],
     components: {
       securitySchemes: {
