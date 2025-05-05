@@ -24,10 +24,13 @@ app.use(cookieParser());
 
 // Connecting frontend and backend
 const allowedOrigins = [
-    'http://localhost:5173',               // local dev
-    'https://ems-pi-five.vercel.app'       // your deployed frontend
-  ];
-  
+  'http://localhost:5173',               // local dev
+  'https://ems-pi-five.vercel.app',      // your production domain
+  'https://ems-git-main-deerajs-projects-38480d12.vercel.app', 
+  'https://ems-36twbqmup-deerajs-projects-38480d12.vercel.app'
+];
+
+
   const corsOptions = {
     origin: allowedOrigins,
     credentials: true,                     // if you’re using cookies/auth headers
