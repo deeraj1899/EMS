@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import connectMongoDb from "./utils/db.js";
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpec from './swagger.js';
+import swaggerSpec from './swaggerOptions.js';
 
 // Import routes
 import authroutes from './routes/authroutes.js';
