@@ -1,0 +1,6 @@
+export const AUTH_API_ENDPOINT="http://localhost:8080/api"
+export const EMPLOYEE_API_ENDPOINT="http://localhost:8080/api/employee"
+export const ADMIN_API_ENDPOINT="http://localhost:8080/api/admin"
+export const LEAVE_API_ENDPOINT="http://localhost:8080/api/employee/leave"
+export const ATTENDANCE_API_ENDPOINT="http://localhost:8080/api/employee/attendance"
+export const DEPARTMENT_API_ENDPOINT="http://localhost:8080/api/employee/department"
