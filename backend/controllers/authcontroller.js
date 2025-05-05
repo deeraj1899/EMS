@@ -58,8 +58,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export const checkout = async (req, res) => {
   const { plan, email } = req.body;
   const planDetails = {
-    '6month': { price: 1200000, duration: 6, label: '6-Month Plan' },
-    '12month': { price: 2000000, duration: 12, label: '12-Month Plan' }
+    '6month':  { price: 1200000, duration: 6,  label: '6‑Month Plan'  },
+    '12month': { price: 2000000, duration: 12, label: '12‑Month Plan' }
   };
 
   if (!planDetails[plan]) {
@@ -70,6 +70,8 @@ export const checkout = async (req, res) => {
   }
 
   try {
+    const frontend = process.env.FRONTEND_URL;  // ← e.g. https://ems-pi-five.vercel.app
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -83,9 +85,10 @@ export const checkout = async (req, res) => {
         },
         quantity: 1,
       }],
-      success_url: `http://localhost:5173/create-organization?payment=success&sessionId={CHECKOUT_SESSION_ID}`,
-      cancel_url: 'http://localhost:5173/create-organization?payment=cancel',
+      success_url:  `${frontend}/create-organization?payment=success&sessionId={CHECKOUT_SESSION_ID}`,
+      cancel_url:   `${frontend}/create-organization?payment=cancel`,
     });
+
     res.json({ id: session.id });
   } catch (error) {
     console.error('Stripe checkout error:', error);
