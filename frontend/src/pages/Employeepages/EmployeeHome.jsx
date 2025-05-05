@@ -24,7 +24,7 @@ const EmployeeHome = () => {
 
   const employeeId = useSelector((state) => state.auth.employee?._id);
   const { employee, loading, error } = useGetEmployeeDetails(employeeId);
-    const organization = useSelector((state) => state.auth.organization);
+  const organization = useSelector((state) => state.auth.organization);
 
   const navItems = [
     { label: "Home", icon: <Home />, path: "/EmployeeHome" },
@@ -42,8 +42,8 @@ const EmployeeHome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Header */}
+    <div className="min-h-screen bg-gradient-to-b from-[#12172b] to-[#1e1e2f] font-['Inter']">
+      {/* Header - Colors restored to original */}
       <div className="flex items-center justify-between bg-white px-6 py-4 shadow">
         <div className="flex items-center gap-2">
           {organization?.organization_logo ? (
@@ -55,7 +55,7 @@ const EmployeeHome = () => {
           ) : (
             <span className="font-bold text-lg">Logo</span>
           )}
-          <h1 className="text-xl font-semibold">Employee Dashboard</h1>
+          <h1 className="text-xl font-semibold text-gray-800">Employee Dashboard</h1>
         </div>
 
         <nav className="flex items-center gap-6">
@@ -63,7 +63,7 @@ const EmployeeHome = () => {
             <button
               key={item.label}
               onClick={() => navigate(item.path)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition ${
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition text-gray-800 ${
                 isActive(item.path) ? "bg-gray-200 text-blue-600 font-semibold" : ""
               }`}
             >
@@ -75,7 +75,7 @@ const EmployeeHome = () => {
           {employee?.Employeestatus !== "Employee" && (
             <button
               onClick={() => navigate("/EmployeeHome/adminLogin")}
-              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition"
+              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition text-gray-800"
             >
               <Crown />
               Admin Login
@@ -92,62 +92,62 @@ const EmployeeHome = () => {
         </nav>
       </div>
 
-      {/* User Profile Section */}
-      <div className="max-w-5xl mx-auto p-6">
-        <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+      {/* User Profile Section - Updated with theme colors */}
+      <div className="max-w-5xl mx-auto p-6 text-white">
+        <div className="bg-[#2a2e47] rounded-xl shadow-lg p-6 flex flex-col items-center">
           {employee?.profilePhoto ? (
             <img
               src={employee.profilePhoto}
               alt="Profile"
-              className="w-32 h-32 object-cover rounded-full border-4 border-blue-500"
+              className="w-32 h-32 object-cover rounded-full border-4 border-[#6c7ac2]"
             />
           ) : (
-            <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-xl">
+            <div className="w-32 h-32 bg-[#444a68] rounded-full flex items-center justify-center text-gray-200 text-xl">
               No Image
             </div>
           )}
-          <h2 className="text-2xl font-semibold mt-4">
-            {employee?.empname}'s Profile
+          <h2 className="text-2xl font-semibold mt-4 text-white">
+            {employee?.empname ? `${employee.empname}'s Profile` : 'Loading Profile...'}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full">
             {/* Personal Info */}
-            <div className="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <div className="bg-[#323b5c] p-4 rounded-lg shadow-sm">
               <div className="flex items-center gap-2 mb-2">
-                <User className="text-blue-500" />
-                <h3 className="text-lg font-semibold">Personal Details</h3>
+                <User className="text-[#6c7ac2]" />
+                <h3 className="text-lg font-semibold text-[#a5b4fc]">Personal Details</h3>
               </div>
-              <p><span className="font-medium">Name:</span> {employee?.empname}</p>
-              <p><span className="font-medium">Email:</span> {employee?.mail}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Name:</span> {employee?.empname || 'N/A'}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Email:</span> {employee?.mail || 'N/A'}</p>
             </div>
 
             {/* Department Info */}
-            <div className="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <div className="bg-[#323b5c] p-4 rounded-lg shadow-sm">
               <div className="flex items-center gap-2 mb-2">
-                <Building className="text-green-500" />
-                <h3 className="text-lg font-semibold">Department Info</h3>
+                <User className="text-[#6c7ac2]" />
+                <h3 className="text-lg font-semibold text-[#a5b4fc]">Department Info</h3>
               </div>
-              <p><span className="font-medium">Department:</span> {employee?.departmentName}</p>
-              <p><span className="font-medium">Status:</span> {employee?.Employeestatus}</p>
-              <p><span className="font-medium">Rating:</span> {employee?.rating ?? "N/A"}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Department:</span> {employee?.departmentName || 'N/A'}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Status:</span> {employee?.Employeestatus || 'N/A'}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Rating:</span> {employee?.rating ?? "N/A"}</p>
             </div>
 
             {/* Projects Info */}
-            <div className="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <div className="bg-[#323b5c] p-4 rounded-lg shadow-sm">
               <div className="flex items-center gap-2 mb-2">
-                <ClipboardList className="text-yellow-500" />
-                <h3 className="text-lg font-semibold">Projects</h3>
+                <ClipboardList className="text-[#6c7ac2]" />
+                <h3 className="text-lg font-semibold text-[#a5b4fc]">Projects</h3>
               </div>
-              <p><span className="font-medium">Pending:</span> {employee?.projectspending ?? "0"}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Pending:</span> {employee?.projectspending ?? "0"}</p>
             </div>
 
             {/* Admin Info */}
-            <div className="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <div className="bg-[#323b5c] p-4 rounded-lg shadow-sm">
               <div className="flex items-center gap-2 mb-2">
-                <Crown className="text-purple-500" />
-                <h3 className="text-lg font-semibold">Admin Info</h3>
+                <Crown className="text-[#6c7ac2]" />
+                <h3 className="text-lg font-semibold text-[#a5b4fc]">Admin Info</h3>
               </div>
-              <p><span className="font-medium">Admin Name:</span> {organization?.adminname || "N/A"}</p>
+              <p className="text-[#e5e7eb]"><span className="font-medium text-white">Admin Name:</span> {organization?.adminname || "N/A"}</p>
             </div>
           </div>
         </div>

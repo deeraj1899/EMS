@@ -27,6 +27,7 @@ const MarkAttendance = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const isActive = (path) => location.pathname === path;
 
@@ -40,6 +41,11 @@ const MarkAttendance = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setIsFlipped(false);
+  };
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
   };
 
   const handleLogout = () => {
@@ -70,9 +76,9 @@ const MarkAttendance = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#12172b] to-[#1e1e2f] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#12172b] to-[#1e1e2f] text-white font-['Inter'] flex flex-col items-center pt-24 px-8 pb-8">
       {/* Header */}
-      <div className="flex items-center justify-between bg-white text-gray-800 px-6 py-4 shadow">
+      <div className="fixed top-0 left-0 w-full flex items-center justify-between bg-white text-gray-800 px-6 py-4 shadow z-50">
         <div className="flex items-center gap-2">
           {organization?.organization_logo ? (
             <img src={organization.organization_logo} alt="Logo" className="w-10 h-10 object-contain" />
@@ -121,34 +127,54 @@ const MarkAttendance = () => {
         <div className="flex gap-4 mb-6">
           <button
             onClick={() => navigate("/employee-dashboard")}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
+            className="bg-blue-600 text-white py-3 px-6 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 shadow-lg hover‘bg-blue-800 hover:-translate-y-1"
           >
             Back
           </button>
           <button
             onClick={() => navigate("/EmployeeHome/attendance-records")}
-            className="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-md"
+            className="bg-cyan-600 text-white py-3 px-6 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-cyan-700 hover:-translate-y-1"
           >
             View Records
           </button>
         </div>
 
-        <div className="bg-[#2a2e47] p-6 rounded-xl shadow-md w-full max-w-md text-center">
-          <h2 className="text-indigo-300 font-semibold text-lg mb-4">Mark Your Attendance</h2>
-          <button
-            onClick={openModal}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
-          >
-            Mark as Present
-          </button>
+        <div className="bg-[#2a2e47] p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
+          <h2 className="font-bold text-2xl text-white mb-6">Mark Your Attendance</h2>
+          <div className="w-[300 [300px] h-[200px] mx-auto mb-8 perspective-[1000px]">
+            <div className={`relative w-full h-full transition-transform duration-[600ms] ease-in-out transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+              <div className="absolute w-full h-full backface-hidden rounded-xl shadow-lg bg-[#323b5c] flex items-center justify-center">
+                <div className="cursor-pointer p-4 text-center" onClick={handleFlip}>
+                  <span className="text-lg font-semibold text-gray-200 transition-colors duration-300 hover:text-[#6c7ac2]">
+                    Mark as Present
+                  </span>
+                </div>
+              </div>
+              <div className="absolute w-full h-full backface-hidden rounded-xl shadow-lg bg-[#3a4366] rotate-y-180 flex items-center justify-center">
+                <div className="p-4 flex flex-col items-center gap-4">
+                  <p className="text-lg text-gray-200 font-semibold">Confirm Attendance?</p>
+                  <button
+                    onClick={handleCheckIn}
+                    disabled={loading}
+                    className={`bg-green-600 text-white py-3 px-6 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 shadow-md hover:bg-green-800 hover:-translate-y-1 ${loading ? 'bg-[#555a78] cursor-not-allowed' : ''}`}
+                  >
+                    {loading ? "Checking..." : "Confirm"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="text-indigo-300 text-base mb-6 p-2 rounded-lg bg-indigo-300/10 transition-opacity duration-300">
+            Click the card to mark your attendance
+          </p>
         </div>
       </div>
 
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-[#2a2e47] p-6 rounded-xl shadow-lg w-[90%] max-w-md">
-            <h3 className="text-indigo-300 text-lg mb-4 font-medium">
+          <div className="bg-[#2a2e47] p-6 rounded-2xl shadow-xl w-[90%] max-w-md">
+            <h3 className="text-indigo-300 text-lg mb-4 font-semibold">
               Confirm Attendance
             </h3>
             <p className="text-gray-300 mb-4">Are you sure you want to mark your attendance?</p>
@@ -156,15 +182,13 @@ const MarkAttendance = () => {
               <button
                 onClick={handleCheckIn}
                 disabled={loading}
-                className={`bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+                className={`bg-green-600 text-white py-3 px-6 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 shadow-md hover:bg-green-700 hover:-translate-y-1 ${loading ? 'bg-[#555a78] cursor-not-allowed' : ''}`}
               >
                 {loading ? "Checking..." : "Confirm"}
               </button>
               <button
                 onClick={closeModal}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md"
+                className="bg-red-600 text-white py-3 px-6 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 shadow-md hover:bg-red-700 hover:-translate-y-1"
               >
                 Cancel
               </button>
