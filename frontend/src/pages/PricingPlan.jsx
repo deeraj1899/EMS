@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { AUTH_API_ENDPOINT } from '../utils/constant';
+import { AUTH_API_ENDPOINT } from '../utils/constant.js';
 
 const stripePromise = loadStripe('pk_test_51R1DCqEDDB0vcEP5eG8ENk9UOlghBKw0fR6JWJwu5YKNhnbbWCbZtkDUigiweY2ArWRXxPkUjMycg0iCVEpeIAS3002c97XwMZ');
 
