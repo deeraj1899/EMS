@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import register from '../assets/Images/register.png';
 import toast from "react-hot-toast";
 import { AUTH_API_ENDPOINT } from '../utils/constant';
@@ -8,23 +8,18 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const CreateOrganizationForm = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-
-    // Extract sessionId from URL query parameters and state from navigation
-    const queryParams = new URLSearchParams(location.search);
-    const sessionId = queryParams.get('sessionId') || '';
-    const { email: initialEmail = '', price: initialPrice = 0, duration: initialDuration = 0 } = location.state || {};
+    const fileInputRef = useRef(null);
 
     const [organization, setOrganizationState] = useState({
         organization_name: "",
-        mail: initialEmail,
+        mail: "",
         adminname: "",
         adminDepartment: "",
         departments: [""],
         organizationLogo: null,
         employeeStatus: "Admin",
-        price: initialPrice,
-        duration: initialDuration,
+        price: 0,
+        duration: 0,
     });
 
     const [validationErrors, setValidationErrors] = useState({
@@ -37,51 +32,6 @@ const CreateOrganizationForm = () => {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const fileInputRef = useRef(null);
-
-    // Fetch email, price, and duration from session if not in state
-    useEffect(() => {
-        const fetchSessionDetails = async () => {
-            if (!sessionId || initialEmail) return; // Skip if already fetched or state is present
-            console.log('Fetching session details for sessionId:', sessionId);
-
-            try {
-                const response = await fetch(`${AUTH_API_ENDPOINT}/stripe/session?sessionId=${sessionId}`);
-                const data = await response.json();
-                console.log('Session details response:', data);
-
-                if (response.ok && data.email) {
-                    console.log('Navigating with state:', { email: data.email, price: data.price, duration: data.duration });
-                    // Navigate again to the same route with state
-                    navigate('/create-organization', {
-                        state: { email: data.email, price: data.price, duration: data.duration },
-                        replace: true,
-                    });
-                } else {
-                    toast.error("Failed to retrieve payment details: " + (data.error || 'Unknown error'));
-                }
-            } catch (error) {
-                console.error("Error fetching session details:", error);
-                toast.error("Error retrieving payment details: " + error.message);
-            }
-        };
-
-        fetchSessionDetails();
-    }, [sessionId, initialEmail, navigate]);
-
-    // Update state when location.state changes (e.g., after navigation)
-    useEffect(() => {
-        const { email: newEmail = '', price: newPrice = 0, duration: newDuration = 0 } = location.state || {};
-        if (newEmail !== organization.mail || newPrice !== organization.price || newDuration !== organization.duration) {
-            setOrganizationState((prev) => ({
-                ...prev,
-                mail: newEmail,
-                price: newPrice,
-                duration: newDuration,
-            }));
-            console.log('Updated organization state:', { mail: newEmail, price: newPrice, duration: newDuration });
-        }
-    }, [location.state]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -210,22 +160,7 @@ const CreateOrganizationForm = () => {
 
             if (response.ok) {
                 toast.success("Organization registered successfully!");
-                setOrganizationState({
-                    organization_name: "",
-                    mail: "",
-                    adminname: "",
-                    adminDepartment: "",
-                    departments: [""],
-                    organizationLogo: null,
-                    employeeStatus: "Admin",
-                    price: 0,
-                    duration: 0,
-                });
                 navigate('/');
-                setValidationErrors({});
-                if (fileInputRef.current) {
-                    fileInputRef.current.value = "";
-                }
             } else {
                 toast.error(`Registration failed: ${data.error || data.message}`);
             }
