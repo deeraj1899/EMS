@@ -23,10 +23,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Connecting frontend and backend
-const corsOptions = {
-    origin: 'http://localhost:5173',
-    credentials: true,
-};
+const allowedOrigins = [
+    'http://localhost:5173',               // local dev
+    'https://ems-pi-five.vercel.app'       // your deployed frontend
+  ];
+  
+  const corsOptions = {
+    origin: allowedOrigins,
+    credentials: true,                     // if you’re using cookies/auth headers
+  };
 app.use(cors(corsOptions));
 app.use("/api", authroutes);
 app.use("/api/employee", employeeroutes);
