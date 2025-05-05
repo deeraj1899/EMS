@@ -15,6 +15,8 @@ import departmentroutes from './routes/departmentroutes.js';
 import leaveroutes from './routes/leaveroutes.js';
 import attendanceroutes from './routes/attendanceroutes.js';
 
+const frontendUrl = process.env.FRONTEND_URL;
+
 dotenv.config({ path: './config.env' });
 
 const app = express();
@@ -29,7 +31,8 @@ const allowedOrigins = [
   'http://localhost:5173',               // local dev
   'https://ems-pi-five.vercel.app',      // production domain
   'https://ems-git-main-deerajs-projects-38480d12.vercel.app',
-  'https://ems-36twbqmup-deerajs-projects-38480d12.vercel.app'
+  'https://ems-36twbqmup-deerajs-projects-38480d12.vercel.app',
+  frontendUrl
 ];
 
 const corsOptions = {
