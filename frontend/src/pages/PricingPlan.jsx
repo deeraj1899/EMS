@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { useNavigate } from 'react-router-dom';
 import { AUTH_API_ENDPOINT } from '../utils/constant.js';
 
 const stripePromise = loadStripe('pk_test_51R1DCqEDDB0vcEP5eG8ENk9UOlghBKw0fR6JWJwu5YKNhnbbWCbZtkDUigiweY2ArWRXxPkUjMycg0iCVEpeIAS3002c97XwMZ');
@@ -7,29 +8,14 @@ const stripePromise = loadStripe('pk_test_51R1DCqEDDB0vcEP5eG8ENk9UOlghBKw0fR6JW
 const PricingPlan = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   const handleCheckout = async (planType) => {
     setLoading(true);
-    const stripe = await stripePromise;
-
     try {
-      const response = await fetch(`${AUTH_API_ENDPOINT}/stripe/create-checkout-session`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan: planType, email }),
-      });
-
-      const session = await response.json();
-
-      if (session.id) {
-        const result = await stripe.redirectToCheckout({ sessionId: session.id });
-        if (result.error) alert(result.error.message);
-      } else {
-        alert('Unable to initiate checkout. Try again later.');
-      }
+      navigate('/create-organization');
     } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Error while processing your checkout.');
+      console.error('Navigation error:', error);
     } finally {
       setLoading(false);
     }
